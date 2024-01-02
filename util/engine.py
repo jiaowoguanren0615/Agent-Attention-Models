@@ -39,7 +39,7 @@ def train_one_epoch(model: torch.nn.Module, criterion: DistillationLoss,
     metric_logger = utils.MetricLogger(delimiter="  ")
     metric_logger.add_meter('lr', utils.SmoothedValue(window_size=1, fmt='{value:.6f}'))
     header = 'Epoch: [{}]'.format(epoch)
-    print_freq = 20
+    print_freq = 50
 
     for idx, (samples, targets) in enumerate(metric_logger.log_every(data_loader, print_freq, header)):
         samples = samples.to(device, non_blocking=True)
@@ -97,7 +97,7 @@ def evaluate(data_loader, model, device, epoch, writer, args, visualization=True
     # switch to evaluation mode
     model.eval()
 
-    print_freq = 10
+    print_freq = 20
     for images, target in metric_logger.log_every(data_loader, print_freq, header):
         images = images.to(device, non_blocking=True)
         target = target.to(device, non_blocking=True)

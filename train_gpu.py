@@ -37,7 +37,6 @@ from util import utils as utils
 from util.optimizer import SophiaG
 from util.engine import train_one_epoch, evaluate
 from util.losses import DistillationLoss
-
 from models import *
 
 from datasets import build_dataset
@@ -54,9 +53,10 @@ def get_args_parser():
     parser.add_argument('--predict', default=True, type=bool, help='plot ROC curve and confusion matrix')
 
     #
-    parser.add_argument('--model', default='unireplknet_t', type=str, metavar='MODEL',
+    parser.add_argument('--model', default='Agent_CSWin_64_24181_tiny_224', type=str, metavar='MODEL',
+                        choices=['Agent_CSWin_64_24181_tiny_224', 'Agent_CSWin_64_36292_small_224', 'Agent_CSWin_96_36292_base_224', 'Agent_CSWin_96_36292_base_384'],
                         help='Name of model to train')
-    parser.add_argument('--input-size', default=224, type=int, help='images input size')
+    parser.add_argument('--input-size', default=224, type=int, choices=[224, 384], help='images input size, set it 384 when you use Agent_*_384 models')
     parser.add_argument('--model-ema', action='store_true')
     parser.add_argument('--no-model-ema', action='store_false', dest='model_ema')
     parser.set_defaults(model_ema=True)
