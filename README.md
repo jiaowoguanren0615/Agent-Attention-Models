@@ -9,7 +9,8 @@ The code mainly comes from official [source code](https://github.com/LeapLabTHU/
     ├── split_data.py: Define the function to read the image dataset and divide the training-set and test-set
     ├── threeaugment.py: Additional data augmentation methods
 ├── models: UniRepLKNet Model
-    ├── build_models.py: Construct "Agent-Attention" models
+    ├── agent_cswin.py: Construct "Agent-cswin" models
+    ├── build_models.py: Construct models
 ├── util:
     ├── engine.py: Function code for a training/validation process
     ├── losses.py: Knowledge distillation loss, combined with teacher model (if any)
