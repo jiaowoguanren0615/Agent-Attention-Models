@@ -10,7 +10,10 @@ The code mainly comes from official [source code](https://github.com/LeapLabTHU/
     ├── threeaugment.py: Additional data augmentation methods
 ├── models: UniRepLKNet Model
     ├── agent_cswin.py: Construct "Agent-cswin" models
-    ├── build_models.py: Construct models
+    ├── agent_deit.py: Construct "Agent-deit" models
+    ├── agent_pvt.py: Construct "Agent-pvt" models
+    ├── agent_swin.py: Construct "Agent-swin" models
+    ├── deit.py: Construct "deit" models
 ├── util:
     ├── engine.py: Function code for a training/validation process
     ├── losses.py: Knowledge distillation loss, combined with teacher model (if any)
