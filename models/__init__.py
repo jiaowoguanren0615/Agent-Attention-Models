@@ -1,1 +1,4 @@
 from .agent_cswin import Agent_CSWin_64_24181_tiny_224, Agent_CSWin_64_36292_small_224, Agent_CSWin_96_36292_base_224, Agent_CSWin_96_36292_base_384
+from .agent_deit import agent_deit_tiny, agent_deit_small, agent_deit_small_448, agent_deit_base
+from .agent_swin import agent_swin_tiny, agent_swin_samll, agent_swin_samll_288, agent_swin_base, agent_swin_base_384
+from .agent_pvt import agent_pvt_tiny, agent_pvt_small, agent_pvt_medium, agent_pvt_medium_256, agent_pvt_large
