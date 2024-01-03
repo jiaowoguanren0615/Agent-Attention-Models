@@ -52,15 +52,15 @@ def get_args_parser():
     parser.add_argument('--epochs', default=5, type=int)
     parser.add_argument('--predict', default=True, type=bool, help='plot ROC curve and confusion matrix')
 
-    #
+    # Model selections
     parser.add_argument('--model', default='Agent_CSWin_64_24181_tiny_224', type=str, metavar='MODEL',
                         choices=['Agent_CSWin_64_24181_tiny_224', 'Agent_CSWin_64_36292_small_224', 'Agent_CSWin_96_36292_base_224', 'Agent_CSWin_96_36292_base_384',
                                  'agent_pvt_tiny', 'agent_pvt_small', 'agent_pvt_medium', 'agent_pvt_large',
-                                 'agent_deit_tiny', 'agent_deit_small', 'agent_deit_small_448', 'agent_deit_base', 
-                                 'agent_swin_tiny', 'agent_swin_samll', 'agent_swin_samll_288', 'agent_swin_base', 'agent_swin_base_384'
+                                 'agent_deit_tiny', 'agent_deit_small', 'agent_deit_small_448', 'agent_deit_base',
+                                 'agent_swin_tiny', 'agent_swin_samll', 'agent_swin_samll_288', 'agent_swin_base', 'agent_swin_base_384',
                                  ],
                         help='Name of model to train')
-    parser.add_argument('--input-size', default=224, type=int, choices=[224, 384], help='images input size, set it 384 when you use Agent_*_384 models')
+    parser.add_argument('--input-size', default=224, type=int, choices=[224, 288, 384, 448], help='images input size, specify this parameter based on selected model name')
     parser.add_argument('--model-ema', action='store_true')
     parser.add_argument('--no-model-ema', action='store_false', dest='model_ema')
     parser.set_defaults(model_ema=True)
